@@ -1,15 +1,14 @@
 import glob
 import sys
-
 import cv2
 import numpy as np
-from PyQt5 import QtWidgets ,QtGui
+from PyQt5 import QtWidgets,QtGui
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QFileDialog
-
 import utils
 from DeteksiUang import Ui_MainWindow
 
+#global variable
 mataUangValue = ""
 dataset = []
 
@@ -45,7 +44,7 @@ class window(QtWidgets.QMainWindow):
             temp = utils.resize(temp, width=int(temp.shape[1] * 0.5))
             temp = cv2.cvtColor(temp, cv2.COLOR_BGR2GRAY)
             temp = cv2.Canny(temp, 50, 200)
-            nominal = file_dataset.replace('dataset_template\\', '')##.replace('\\1.jpg', '').replace('\\2.jpg', '').replace('\\3.jpg', '').replace('\\4.jpg', '').replace('\\5.jpg', '').replace('\\6.jpg', '').replace('\\7.jpg', '').replace('\\8.jpg', '').replace('\\9.jpg', '').replace('\\10.jpg', '').replace('\\11.jpg', '').replace('\\12.jpg', '').replace('\\13.jpg', '')
+            nominal = file_dataset.replace('dataset_template\\', '').replace('\\1.jpg', '').replace('\\2.jpg', '').replace('\\3.jpg', '').replace('\\4.jpg', '').replace('\\5.jpg', '').replace('\\6.jpg', '').replace('\\7.jpg', '').replace('\\8.jpg', '').replace('\\9.jpg', '').replace('\\10.jpg', '').replace('\\11.jpg', '').replace('\\12.jpg', '').replace('\\13.jpg', '')
             dataset.append({"glob": temp, "nominal": nominal})
 
     def deteksi_uang(self):
