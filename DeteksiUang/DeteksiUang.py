@@ -145,6 +145,6 @@ class Ui_MainWindow(object):
         self.GambarMataUang.setText(_translate("MainWindow", "-- MATA UANG BELUM DIPILIH --"))
         self.label.setText(_translate("MainWindow", "Deteksi Mata Uang"))
         self.PilihUangButton.setText(_translate("MainWindow", "Pilih Uang"))
-        self.DeteksiButton.setText(_translate("MainWindow", "Deteksi"))
+        self.DeteksiButton.setText(_translate("MainWindow", "Deteksi Uang"))
         self.MataUangLabel.setText(_translate("MainWindow", "Mata Uang"))
         self.HasilLabel.setText(_translate("MainWindow", "Hasil"))
