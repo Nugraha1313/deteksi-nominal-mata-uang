@@ -93,7 +93,7 @@ class window(QtWidgets.QMainWindow):
             pixmap = QPixmap("hasil.jpg")
             pixmap3 = pixmap.scaledToHeight(275)
             self.ui.GambarMataUang.setPixmap(pixmap3)
-            self.ui.HasilTextEdit.setPlainText(hasil['nominal'] + " Terdeteksi")
+            self.ui.HasilTextEdit.setPlainText(hasil['nominal'] + " Rupiah Terdeteksi")
 
         else:
             self.ui.HasilTextEdit.setPlainText("Tidak Terdeteksi")

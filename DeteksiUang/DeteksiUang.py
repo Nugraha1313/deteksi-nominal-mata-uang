@@ -14,38 +14,31 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 605)
+        MainWindow.resize(800, 606)
         MainWindow.setStyleSheet("QMainWindow {\n"
-"    background-color:#fff5ee;\n"
-"\n"
+"    background-color:#121212;\n"
+"    background: url(:/bg/Deteksi Nominal Mata Uang.png);\n"
 "}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.GambarMataUang = QtWidgets.QLabel(self.centralwidget)
-        self.GambarMataUang.setGeometry(QtCore.QRect(120, 120, 591, 271))
+        self.GambarMataUang.setGeometry(QtCore.QRect(110, 140, 591, 271))
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setFamily("JetBrains Mono")
+        font.setPointSize(14)
         font.setBold(False)
         font.setWeight(50)
         self.GambarMataUang.setFont(font)
         self.GambarMataUang.setStyleSheet("QLabel {\n"
-"    border : 1px solid black;\n"
+"    border : 1px solid #2b4d70;\n"
+"    color : #2b4d70;\n"
 "}")
         self.GambarMataUang.setAlignment(QtCore.Qt.AlignCenter)
         self.GambarMataUang.setObjectName("GambarMataUang")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(280, 20, 281, 41))
-        font = QtGui.QFont()
-        font.setPointSize(22)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setTextFormat(QtCore.Qt.AutoText)
-        self.label.setObjectName("label")
         self.PilihUangButton = QtWidgets.QPushButton(self.centralwidget)
-        self.PilihUangButton.setGeometry(QtCore.QRect(220, 410, 131, 41))
+        self.PilihUangButton.setGeometry(QtCore.QRect(220, 430, 131, 41))
         self.PilihUangButton.setStyleSheet("QPushButton {\n"
-"  background-color: #111827;\n"
+"  background-color: #2b4d70;\n"
 "  border: 1px solid transparent;\n"
 "  border-radius: 12px;\n"
 "  box-sizing: border-box;\n"
@@ -75,14 +68,18 @@ class Ui_MainWindow(object):
 "    opacity : 0.75;\n"
 "}\n"
 "\n"
+"QPushButton::hover {\n"
+"    border: 3px solid black;\n"
+"}\n"
+"\n"
 "\n"
 "\n"
 "")
         self.PilihUangButton.setObjectName("PilihUangButton")
         self.DeteksiButton = QtWidgets.QPushButton(self.centralwidget)
-        self.DeteksiButton.setGeometry(QtCore.QRect(490, 410, 131, 41))
+        self.DeteksiButton.setGeometry(QtCore.QRect(490, 430, 131, 41))
         self.DeteksiButton.setStyleSheet("QPushButton {\n"
-"  background-color: #111827;\n"
+"  background-color: #2b4d70;\n"
 "  border: 1px solid transparent;\n"
 "  border-radius: 12px;\n"
 "  box-sizing: border-box;\n"
@@ -109,23 +106,33 @@ class Ui_MainWindow(object):
 "QPushButton::pressed{\n"
 "    background-color: #374151;\n"
 "    opacity : 0.75;\n"
+"}\n"
+"\n"
+"QPushButton::hover {\n"
+"    border: 3px solid black;\n"
 "}")
         self.DeteksiButton.setObjectName("DeteksiButton")
         self.HasilTextEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.HasilTextEdit.setGeometry(QtCore.QRect(120, 490, 591, 71))
+        self.HasilTextEdit.setGeometry(QtCore.QRect(110, 510, 591, 71))
+        self.HasilTextEdit.setStyleSheet("background:white;\n"
+"border-radius: 15px;")
         self.HasilTextEdit.setReadOnly(True)
         self.HasilTextEdit.setObjectName("HasilTextEdit")
         self.MataUangLabel = QtWidgets.QLabel(self.centralwidget)
-        self.MataUangLabel.setGeometry(QtCore.QRect(120, 100, 81, 16))
+        self.MataUangLabel.setGeometry(QtCore.QRect(110, 120, 101, 21))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("JetBrains Mono")
+        font.setPointSize(12)
         self.MataUangLabel.setFont(font)
+        self.MataUangLabel.setStyleSheet("color : #2b4d70;")
         self.MataUangLabel.setObjectName("MataUangLabel")
         self.HasilLabel = QtWidgets.QLabel(self.centralwidget)
-        self.HasilLabel.setGeometry(QtCore.QRect(120, 470, 47, 13))
+        self.HasilLabel.setGeometry(QtCore.QRect(110, 490, 47, 13))
         font = QtGui.QFont()
-        font.setPointSize(10)
+        font.setFamily("JetBrains Mono")
+        font.setPointSize(12)
         self.HasilLabel.setFont(font)
+        self.HasilLabel.setStyleSheet("color : #2b4d70;")
         self.HasilLabel.setObjectName("HasilLabel")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -141,10 +148,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Deteksi Nominal Mata Uang Rupiah"))
-        self.GambarMataUang.setText(_translate("MainWindow", "-- MATA UANG BELUM DIPILIH --"))
-        self.label.setText(_translate("MainWindow", "Deteksi Mata Uang"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Deteksi Nominal Mata Uang"))
+        self.GambarMataUang.setText(_translate("MainWindow", "MATA UANG BELUM DIPILIH"))
         self.PilihUangButton.setText(_translate("MainWindow", "Pilih Uang"))
         self.DeteksiButton.setText(_translate("MainWindow", "Deteksi Uang"))
         self.MataUangLabel.setText(_translate("MainWindow", "Mata Uang"))
         self.HasilLabel.setText(_translate("MainWindow", "Hasil"))
+# import bg_rc
+import bg
